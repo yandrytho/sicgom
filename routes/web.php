@@ -33,11 +33,15 @@ Route::group(['middleware' => ['web']], function () {
 //FIN INICIO DE SESION
 
 
+//listar usuarios
+Route::get('/lista_usuarios','UsuarioControllers@lista');
+//fin listar usuarios
 
 //GESTION USUARIOS
 Route::resource('/app/usuario','UsuarioControllers');
+
 Route::get('/app/usuarios', function(){
-	return view('usuarios.gestionUsuario');
+	return view('usuarios.GestionUsuarios');
 });
 //
 
