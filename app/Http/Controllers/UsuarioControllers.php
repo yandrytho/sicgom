@@ -38,7 +38,20 @@ class UsuarioControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //return $request->all();
+        User::create(['name'          =>$request->input('nombre'),
+                      'email'         =>$request->input('usuario'),
+                      'password'      =>bcrypt($request->input('password')),
+                      'tipoUsuario'   =>$request->input('tipoUsuario'),
+                            ]);
+        return response()->json(["registro"=>true]);
+    }
+
+    public function lista()
+    {
+     $Usuarios = User::all();
+     return view('usuarios.TablaUsuarios',compact("Usuarios"));
     }
 
     /**
@@ -60,7 +73,8 @@ class UsuarioControllers extends Controller
      */
     public function edit($id)
     {
-        //
+      $Usuarios = User::find($id);
+      return response()->json($Usuarios->toArray());
     }
 
     /**
@@ -72,7 +86,12 @@ class UsuarioControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $Usuarios = User::find($id);
+        $Usuarios->fill($request->all());
+        $Usuarios->save();
+        return response()->json([
+            "sms"=>"ok" 
+            ]);
     }
 
     /**
@@ -83,6 +102,10 @@ class UsuarioControllers extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Usuarios = User::find($id);
+        $Usuarios = $Usuarios->delete();
+        return response()->json([
+            "sms"=>"ok" 
+            ]);
     }
 }
