@@ -4,65 +4,30 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Usuarios</h2>
+                    <h2> Administración de Usuarios</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
-                        <a href="myModal_GestionUsuarios" class="dropdown-toggle" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-plus"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#myModal_IngresarUsuario"><i class="fa fa-user-plus"></i></a>
                         
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+                  <div class="x_content" id="datatable">
                     <p class="text-muted font-13 m-b-30">
-                      Administración de Usuarios
+                     
                     </p>
-                    <table id="datatable" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>id</th>
-                          <th>Tipo Usuario</th>
-                          <th>Usuario</th>
-                          <th>Password</th>
-                          <th>Opciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                     	@foreach($Usuarios as $Cat) 
-    					<tr>
-                          <td>{{$Cat->id}}</td>
-                          <td>{{$Cat->tipoUsuario}}</td>
-                          <td>{{$Cat->user}}</td>
-                          <td>{{$Cat->password}}</td>
-                          <td>
-                          	<div class="btn-group">
-                      			<button type="button" class="btn btn-default">Acciones</button>
-                      			<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        			<span class="caret"></span>
-                        			<span class="sr-only">Toggle Dropdown</span>
-                      			</button>
-                      				<ul class="dropdown-menu" role="menu">
-                        				<li><a onclick="cargar_datos({{$Cat->id}})" href="#" data-toggle="modal" data-target="#myModal_GestionUsuarios" >Modificar</a>
-                        				</li>
-                        				<li><a onclick="EliminarUsuarios({{$Cat->id}})" href="#">Eliminar</a>
-                        				</li>
-                      				</ul>
-                    		</div>	
-                    	  </td>
-                        </tr> 
-    					@endforeach                     
-                      </tbody>
-                    </table>
+                    @include('usuarios.TablaUsuarios')
                   </div>
                 </div>
               </div>
         </div>
 
-<!--  Modal para ACTUALIZAR -->
+<!--  Modal para modificar Usuarios -->
 
-<div class="modal fade" id="myModal_GestionUsuarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal_ModificarUsuarios" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -74,19 +39,23 @@
             {!!Form::open(array('url'=>'','class'=>'frmActualizarUsuarios','method'=>'POST'))!!}
         
             <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            <input  type="hidden" name="" value="" id="IdUsuario">  
+            <input  type="hidden" name="" value="" id="IdUsuario"> 
+
             <label for="disabledTextInput">Tipo Usuarios</label>
-            <select id="idTipoUsuario" name="tipoUsuario" class="form-control text">
-                                    <option>Seleccione...</option>
-                                   
-                                        <option value="{{$Cat->id}}"> {{$Cat->tipoUser}}</option>
-                                    
+            <select id="tipoUsuario_A" name="tipoUsuario_A" class="form-control text">
+                                    <option id="tipoUsuario_A" name="tipoUsuario_A">Seleccione Tipo Usuario</option>
+                                        <option value="Administrador"> Administrador </option>
+                                        <option value="Secretario"> Secretraria</option>
                                     </select>
+
+            {!!Form::label('Nombre:')!!}
+            {!!Form::text('nombre_A',null,['id'=>'nombre_A', 'class'=>'form-control','placeholder'=>'Ingrese el nombre de Usuario','required'=>''])!!}
+
             {!!Form::label('Usuario:')!!}
             {!!Form::text('user',null,['id'=>'user_A', 'class'=>'form-control','placeholder'=>'Ingrese el nombre de Usuario','required'=>''])!!}
 
             {!!Form::label('Contrasena:')!!}
-            {!!Form::text('password',null,['id'=>'password_A', 'class'=>'form-control','placeholder'=>'Ingrese contrasena de Usuario','required'=>''])!!}
+            {!!Form::text('password_A',null,['id'=>'password_A', 'class'=>'form-control','placeholder'=>'Ingrese contrasena de Usuario','required'=>''])!!}
             
             
       </div>
@@ -99,6 +68,48 @@
   </div>
 </div>        
 
-<!--  FIN Modal para ACTUALIZAR -->
+<!--  FIN Modal para Moidifcar Usuarios -->
 
+<!--  Modal para Ingresar Usuarios -->
+
+<div class="modal fade" id="myModal_IngresarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Actualizar Usuarios</h4>
+      </div>
+      <div class="modal-body">
+          
+        {!!Form::open(array('url'=>'','id'=>'frmIngresarUsuarios','method'=>'POST'))!!}
+        
+              <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
+              <input  type="hidden" name="" value="" id="IdUsuario">  
+
+              <label for="disabledTextInput">Tipo Usuarios</label>
+              <select id="tipoUsuario" name="tipoUsuario" class="form-control text">
+                                      <option>Seleccione Tipo Usuario</option>
+                                          <option value="Administrador"> Administrador </option>
+                                          <option value="Secretario"> Secretario </option>
+                                      </select>
+              {!!Form::label('Nombre:')!!}
+              {!!Form::text('nombre',null,['id'=>'nombre', 'class'=>'form-control','placeholder'=>'Ingrese el nombre de Usuario','required'=>''])!!}
+
+              {!!Form::label('Usuario:')!!}
+              {!!Form::text('usuario',null,['id'=>'usuario', 'class'=>'form-control','placeholder'=>'Ingrese el correo de Usuario','required'=>''])!!}
+
+              {!!Form::label('Contraseña:')!!}
+              {!!Form::text('password',null,['id'=>'password', 'class'=>'form-control','placeholder'=>'Ingrese contrasena de Usuario','required'=>''])!!}
+      </div>
+      <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-success" id="btn_IngresarUsuarios" >Registar</button>
+       {!!Form::close()!!}
+
+      </div>
+    </div>
+  </div>
+</div>        
+
+<!--  FIN Modal para Ingresar Usuarios -->
    
