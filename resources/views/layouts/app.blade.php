@@ -9,6 +9,13 @@
 
     <title>SICGOM - UTM</title>
 
+
+     
+    <!-- notificacion -->
+    {!!Html::style('css/pnotify.css')!!}
+    <!-- notificacion -->
+    {!!Html::style('css/pnotify.brighttheme.css')!!}
+
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
     <!-- Font Awesome -->
@@ -18,6 +25,10 @@
     <!-- Custom Theme Style -->
     {!!Html::style('css/custom.min.css')!!}
     {!!Html::style('css/sicgom.css')!!}
+    
+     <!-- csss de swal -->
+    {!!Html::style('css/sweetalert.css')!!}
+
         <!-- jQuery -->
     {!!Html::script('plugins/jquery/dist/jquery.min.js')!!}
 
@@ -201,6 +212,12 @@
     {!!Html::script('plugins/Flot/jquery.flot.time.js')!!}
     {!!Html::script('plugins/Flot/jquery.flot.stack.js')!!}
     {!!Html::script('plugins/Flot/jquery.flot.resize.js')!!}
+     
+     
+
+    <!-- notificacion -->
+    {!!Html::script('js/pnotify.js')!!}
+    {!!Html::script('js/pnotify.desktop.js')!!}
 
     <!-- Flot plugins -->
     {!!Html::script('plugins/flot.orderbars/js/jquery.flot.orderBars.js')!!}
@@ -217,6 +234,8 @@
     <!-- Custom Theme Scripts -->
     {!!Html::script('js/custom.min.js')!!}
     {!!Html::script('js/sicgom.js')!!}
+     
+    {!!Html::script('js/sweetalert.min.js')!!}
     @yield('js')
     
   

@@ -84,7 +84,7 @@
         {!!Form::open(array('url'=>'','id'=>'frmIngresarUsuarios','method'=>'POST'))!!}
         
               <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-              <input  type="hidden" name="" value="" id="IdUsuario">  
+              <input  type="hidden" name="" value="" id="IdUsuario">
 
               <label for="disabledTextInput">Tipo Usuarios</label>
               <select id="tipoUsuario" name="tipoUsuario" class="form-control text">
@@ -92,14 +92,22 @@
                                           <option value="Administrador"> Administrador </option>
                                           <option value="Secretario"> Secretario </option>
                                       </select>
+              <span id="span_tipoUsuario"></span>
+              <span id="span_mensaje_tipoUsuario" style="display: block;color: red;"></span>                        
               {!!Form::label('Nombre:')!!}
               {!!Form::text('nombre',null,['id'=>'nombre', 'class'=>'form-control','placeholder'=>'Ingrese el nombre de Usuario','required'=>''])!!}
+              <span id="span_nombre"></span>
+              <span id="span_mensaje_nombre" style="display: block;color: red;"></span>
 
               {!!Form::label('Usuario:')!!}
               {!!Form::text('usuario',null,['id'=>'usuario', 'class'=>'form-control','placeholder'=>'Ingrese el correo de Usuario','required'=>''])!!}
+              <span id="span_usuario"></span>
+              <span id="span_mensaje_usuario" style="display: block;color: red;"></span>
 
               {!!Form::label('Contraseña:')!!}
               {!!Form::text('password',null,['id'=>'password', 'class'=>'form-control','placeholder'=>'Ingrese contrasena de Usuario','required'=>''])!!}
+              <span id="span_password"></span>
+              <span id="span_mensaje_password" style="display: block;color: red;"></span>
       </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

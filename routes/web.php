@@ -43,9 +43,17 @@ Route::resource('/app/usuario','UsuarioControllers');
 Route::get('/app/usuarios', function(){
 	return view('usuarios.GestionUsuarios');
 });
-//
 
+// tipos financiamientos
+Route::resource('/app/tipoFinanciamiento','TipoFinanciamientosController');
 
+/*Route::get('/app/tipoFinanciamientos', function(){
+	return view('usuarios.GestionUsuarios');
+});*/
+
+//listar tipoFinanciamientos
+Route::get('/lista_tipoFinanciamiento','TipoFinanciamientosController@lista');
+//fin listar tipoFinanciamientos
 
 
 

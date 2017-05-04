@@ -37,3 +37,36 @@ body.login{
 input[type=text]:focus {
     background-color: lightblue;
 }
+
+	.error{
+        border-color: #e83e3e;
+        background-color: #f9e1de;
+    }
+    .error:active{
+        border-color: #e83e3e;
+    }
+    .error_span:after{
+        content: 'x';
+        color: #fff;
+        position: absolute;
+        top: 55px;
+        left: 300px;
+        font-size: 20px;
+        background: red;
+        border-radius: 50%;
+        width: 30px;
+        text-align: center;
+        height: 30px;
+    }
+
+@media (max-width: 670px) {
+    
+    .error_span:after{
+        left: 245px;
+    }
+    .btn-act{
+    left: 60%;
+    }
+    .btnCancelar{
+    left: 82%;
+    }

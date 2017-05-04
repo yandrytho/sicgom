@@ -29,9 +29,9 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i>Configuraciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')">Tipos Financiamientos</a></li>
                       <li><a href="fixed_footer.html">Fixed Footer</a></li>
                     </ul>
                   </li>
