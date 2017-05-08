@@ -6,7 +6,9 @@
    /* alineacion horizontal */
   justify-content: center;
 }
-
+.margin_top_10px{
+    margin-top: 10px;
+}
 .login_wrapper{
 	margin-top: 0px !important;
 }

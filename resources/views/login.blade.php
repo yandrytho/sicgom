@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,13 +39,13 @@
         <div class="animate form login_form">
           <section class="login_content">
               <h1>SICGOM - UTM</h1>
-              <div>
+              <div class="margin_top_10px">
                 <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required="" />
               </div>
-              <div>
+              <div class="margin_top_10px">
                 <input type="password" class="form-control" id="clave" name="clave" placeholder="Clave" required="" />
               </div>
-              <div>
+              <div class="margin_top_10px">
                 <button class="btn btn btn-dark form-control" name="btn-login" id="btn-login" >Iniciar Sessión</button>
                 <a class="reset_pass" >Olvido su clave?</a>
               </div>
