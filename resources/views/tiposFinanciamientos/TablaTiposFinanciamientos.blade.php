@@ -22,6 +22,8 @@
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a onclick="cargar_datos({{$tipoFinan->id}})" href="#" data-toggle="modal" data-target="#myModal_ModificarTipoFinanciamientos" >Modificar</a>
                                         </li>
+                                        <li><a onclick="EliminarUsuarios({{$tipoFinan->id}})" href="javascript:void(0)">Eliminar</a>
+                                    </li>
                                     </ul>
                             </div>  
                           </td>

@@ -25,38 +25,40 @@
               </div>
         </div>
 
-<!--  Modal para modificar Usuarios -->
+<!--  Modal para modificar tipo financiamientos-->
 
 <div class="modal fade" id="myModal_ModificarTipoFinanciamientos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Actualizar Usuarios</h4>
+        <h4 class="modal-title" id="myModalLabel">Actualizar Tipos De Financiamientos </h4>
       </div>
       <div class="modal-body">
           
             {!!Form::open(array('url'=>'','class'=>'frmActualizarUsuarios','method'=>'POST'))!!}
         
             <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
-            <input  type="hidden" name="" value="" id="IdUsuario"> 
+            <input  type="hidden" name="" value="" id="IdTipoFinanciamiento"> 
 
            
             {!!Form::label('Tipo Financiamiento:')!!}
             {!!Form::text('tipoFinanciamiento_A',null,['id'=>'tipoFinanciamiento_A', 'class'=>'form-control','placeholder'=>'Ingrese Tipo de Financiamiento','required'=>''])!!}
+              <span id="span_tipoFinanciamiento_A"></span>
+              <span id="span_mensaje_tipoFinanciamiento_A" style="display: block;color: red;"></span>
 
             
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        {!!link_to('#', $title='Actualizar Tipo de Financiamientos', $attributes =['id'=>'btn_ActualizarTipoFinanciamientos', 'class'=>'btn btn-success btn-guardar'],  $secure= null)!!}
+        {!!link_to('#', $title='Actualizar', $attributes =['id'=>'btn_ActualizarTipoFinanciamientos', 'class'=>'btn btn-success btn-guardar'],  $secure= null)!!}
          {!!Form::close()!!}
       </div>
     </div>
   </div>
 </div>        
 
-<!--  FIN Modal para Moidifcar Usuarios -->
+<!--  FIN Modal para Moidifcar tipo de financiamientos -->
 
 <!--  Modal para Ingresar Tipo Financiamientos -->
 
@@ -69,18 +71,20 @@
       </div>
       <div class="modal-body">
           
-        {!!Form::open(array('url'=>'','id'=>'frmIngresarTipoFinanciamientos','method'=>'POST'))!!}
+        {!!Form::open(array('url'=>'','id'=>'frmIngresartipoFinanciamiento','method'=>'POST'))!!}
         
               <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
               <input  type="hidden" name="" value="" id="IdTipoFinanciamiento">
               
 
               {!!Form::label('Tipos Financiamientos:')!!}
-              {!!Form::text('tipoFinanciamiento',null,['id'=>'tipoFinanciamiento', 'class'=>'form-control','placeholder'=>'Ingrese contrasena de Usuario','required'=>''])!!}
+              {!!Form::text('tipoFinanciamiento',null,['id'=>'tipoFinanciamiento', 'class'=>'form-control','placeholder'=>'Ingrese Tipo de Financiamiento','required'=>''])!!}
+              <span id="span_tipoFinanciamiento"></span>
+              <span id="span_mensaje_tipoFinanciamiento" style="display: block;color: red;"></span>
       </div>
       <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-success" id="btn_IngresarTipoFinanciamientos" >Guardar</button>
+              <button type="button" class="btn btn-success" id="btn_IngresarTipoFinanciamientos" >Registrar</button>
        {!!Form::close()!!}
 
       </div>

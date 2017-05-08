@@ -33,31 +33,24 @@ Route::group(['middleware' => ['web']], function () {
 //FIN INICIO DE SESION
 
 
-//listar usuarios
-Route::get('/lista_usuarios','UsuarioControllers@lista');
-//fin listar usuarios
-
-//GESTION USUARIOS
+//usuarios
 Route::resource('/app/usuario','UsuarioControllers');
-
+Route::get('/lista_usuarios','UsuarioControllers@lista');
 Route::get('/app/usuarios', function(){
 	return view('usuarios.GestionUsuarios');
 });
 
-// tipos financiamientos
-Route::resource('/app/tipoFinanciamiento','TipoFinanciamientosController');
-
-/*Route::get('/app/tipoFinanciamientos', function(){
-	return view('usuarios.GestionUsuarios');
-});*/
-
-//listar tipoFinanciamientos
-Route::get('/lista_tipoFinanciamiento','TipoFinanciamientosController@lista');
-//fin listar tipoFinanciamientos
-
-
-
 Route::resource('home','HomerController');
 Route::post('logeo',array('as'=>'login', 'uses'=>'loginController@store'));
 	Route::get('logout','LoginController@logout');
+
+//fin usuarios
+
+// tipoFinanciamientos
+Route::resource('/app/tipoFinanciamiento','TipoFinanciamientosController');
+Route::get('/lista_tipoFinanciamiento','TipoFinanciamientosController@lista');
+//fin tipoFinanciamientos
+
+
+
 
