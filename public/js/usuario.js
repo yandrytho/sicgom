@@ -62,8 +62,7 @@
 
 //FUNCION REGISTRAR USUARIOS
 $("#btn_IngresarUsuarios").click(function(){
- if($('#nombre').val()=="" 
- 		&& $('#usuario').val()=="" && $('#password').val()==""){
+ if($('#nombre').val()=="" && $('#usuario').val()=="" && $('#password').val()==""){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',

@@ -32,7 +32,7 @@
                   <li><a><i class="fa fa-clone"></i>Configuraciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')">Tipos Financiamientos</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoEstadoMeta')">Tipos Estados Metas</a></li>
                     </ul>
                   </li>
                 </ul>

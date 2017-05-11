@@ -27,7 +27,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('app', function(){
 		return view('layouts.app');
 	});
-
 });
 
 //FIN INICIO DE SESION
@@ -42,7 +41,7 @@ Route::get('/app/usuarios', function(){
 
 Route::resource('home','HomerController');
 Route::post('logeo',array('as'=>'login', 'uses'=>'loginController@store'));
-	Route::get('logout','LoginController@logout');
+Route::get('logout','LoginController@logout');
 
 //fin usuarios
 
@@ -50,6 +49,12 @@ Route::post('logeo',array('as'=>'login', 'uses'=>'loginController@store'));
 Route::resource('/app/tipoFinanciamiento','TipoFinanciamientosController');
 Route::get('/lista_tipoFinanciamiento','TipoFinanciamientosController@lista');
 //fin tipoFinanciamientos
+
+// tipos estados metas
+Route::resource('/app/tipoEstadoMeta','TipoEstadoMetaController');
+Route::get('/lista_tipoEstadoMeta','TipoEstadoMetaController@lista');
+//fin tipos estados metas
+
 
 
 
