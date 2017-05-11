@@ -55,6 +55,11 @@ Route::resource('/app/tipoEstadoMeta','TipoEstadoMetaController');
 Route::get('/lista_tipoEstadoMeta','TipoEstadoMetaController@lista');
 //fin tipos estados metas
 
+//Indicadores
+Route::resource('/app/indicadores','IndicadoresController');
+Route::get('/lista_indicadores','IndicadoresController@lista');
+//fin indicadores
+
 
 
 

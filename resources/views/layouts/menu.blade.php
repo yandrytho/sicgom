@@ -33,6 +33,7 @@
                     <ul class="nav child_menu">
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')">Tipos Financiamientos</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoEstadoMeta')">Tipos Estados Metas</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/indicadores')">Indicadores</a></li>
                     </ul>
                   </li>
                 </ul>

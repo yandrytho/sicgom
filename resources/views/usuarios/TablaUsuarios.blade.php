@@ -1,10 +1,9 @@
 <table id="" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Tipo Usuario</th>
-                          <th>Nombre</th>
-                          <th>Usuario</th>
-                          <th>Password</th>
+                          <th>id</th>
+                          <th>Indicador</th>
+                          <th>Descripcion</th>
                           <th>Opciones</th>
                         </tr>
                       </thead>

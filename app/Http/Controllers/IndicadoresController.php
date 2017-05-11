@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\indicadores;
 use Illuminate\Http\Request;
-use App\TiposEstadosMetas;
 use DB;
 use Auth;
-class TipoEstadoMetaController extends Controller
+
+class IndicadoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,15 @@ class TipoEstadoMetaController extends Controller
      */
     public function index()
     {
-      $TiposEstadosMetas=TiposEstadosMetas::All();
-      return view('TiposEstadosMetas.GestionTiposEstadosMetas',compact('TiposEstadosMetas'));
+        $indicadores=indicadores::All();
+        return view('indicadores.GestionIndicadores',compact('indicadores')); 
     }
 
- public function lista()
-    {
-     $TiposEstadosMetas = TiposEstadosMetas::all();
-     return view('tiposEstadosMetas.TablaTiposEstadosMetas',compact("TiposEstadosMetas"));
+    public function lista(){
+        $indicadores=indicadores::All();
+        return view('indicadores.TablaIndicadores',compact('indicadores'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,8 +42,8 @@ class TipoEstadoMetaController extends Controller
      */
     public function store(Request $request)
     {
-        tiposEstadosMetas::create(['tipoEstadoMeta'=>$request->input('tipoEstadoMeta'),
-                                   'descripcion'=>$request->input('descripcion')
+        indicadores::create(['indicador'=>$request->input('indicador'),
+                             'descripcion'=>$request->input('descripcion')
                      ]);
         return response()->json(["registro"=>true]);
     }
@@ -67,8 +67,8 @@ class TipoEstadoMetaController extends Controller
      */
     public function edit($id)
     {
-        $TiposEstadosMetas=TiposEstadosMetas::find($id);
-        return response()->json($TiposEstadosMetas->toArray());
+      $indicadores=indicadores::find($id);
+      return response()->json($indicadores->toArray());
     }
 
     /**
@@ -80,9 +80,9 @@ class TipoEstadoMetaController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $TiposEstadosMetas=tiposEstadosMetas::find($id);
-       $TiposEstadosMetas->fill($request->all());
-       $TiposEstadosMetas->save();
+       $indicadores=indicadores::find($id);
+       $indicadores->fill($request->all());
+       $indicadores->save();
        return response()->json([
        "sms"=>"ok"
         ]);
@@ -96,8 +96,8 @@ class TipoEstadoMetaController extends Controller
      */
     public function destroy($id)
     {
-       $TiposEstadosMetas=tiposEstadosMetas::find($id);
-       $TiposEstadosMetas=$TiposEstadosMetas->delete();
+       $indicadores=indicadores::find($id);
+       $indicadores=$indicadores->delete();
        return response()->json([
         "sms"=>"ok"
         ]);

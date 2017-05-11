@@ -191,7 +191,7 @@ function registrar_tipoEstadoMetas(){
   });
 }
 
-function EliminarUsuarios(id){
+function EliminarTipoEstadoMeta(id){
 
     swal({ 
     title: "¿Deseas Elimar Tipo de Estado Meta?",
