@@ -65,6 +65,10 @@ Route::resource('/app/politicaInstitucional','PoliticasInstitucionalesController
 Route::get('/lista_politicaInstitucional','PoliticasInstitucionalesController@lista');
 //fin politicas Institucionales
 
+//responsable estrategicos
+Route::resource('/app/responsableEstrategico','ResponsableEstrategicoController');
+Route::get('/lista_reponsableEstrategico','ResponsableEstrategicoController@lista');
+//fin responsable estrategicos
 
 
 
