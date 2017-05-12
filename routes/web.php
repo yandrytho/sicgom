@@ -60,6 +60,13 @@ Route::resource('/app/indicadores','IndicadoresController');
 Route::get('/lista_indicadores','IndicadoresController@lista');
 //fin indicadores
 
+//politicas Institucionales
+Route::resource('/app/politicaInstitucional','PoliticasInstitucionalesController');
+Route::get('/lista_politicaInstitucional','PoliticasInstitucionalesController@lista');
+//fin politicas Institucionales
+
+
+
 
 
 

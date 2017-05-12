@@ -1,12 +1,13 @@
+
 /*Validaci[on del campo tipo estado meta*/
-        $('#indicador').blur(function(){
-            var indicador = $("#indicador").val();
-            if (indicador.indexOf('')== -1){
-              $('#indicador').addClass('error');
-              $('#indicador').html('Ingrese Politica Institucional');
+        $('#politicaInstitucional').blur(function(){
+            var politicaInstitucional = $("#politicaInstitucional").val();
+            if (politicaInstitucional.indexOf('')== -1){
+              $('#politicaInstitucional').addClass('error');
+              $('#politicaInstitucional').html('Ingrese Politica Institucional');
             }else{
-            $('#indicador').removeClass('error');
-            $('#span_mensaje_indicador').html('');
+            $('#politicaInstitucional').removeClass('error');
+            $('#span_mensaje_politicaInstitucional').html('');
             }
             
         }); // fin
@@ -24,13 +25,10 @@
             
         }); // fin
 
-
         
-
-
-//click al boton Registrar indicadores
-$("#btn_IngresarIndicador").click(function(){
- if($('#indicador').val()=="" && $('#descripcion').val()==""){
+//click al boton Registrar tipo de financiamientos
+$("#btn_IngresarPoliticaInstitucional").click(function(){
+ if($('#politicaInstitucional').val()=="" && $('#descripcion').val()==""){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -38,16 +36,16 @@ $("#btn_IngresarIndicador").click(function(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
 
-                $('#indicador').addClass('error');
+                $('#politicaInstitucional').addClass('error');
                 $('#descripcion').addClass('error');
 
                 
-          }else if($('#indicador').val()==""){
-                $('#indicador').addClass('error');
-                $('#span_indicador').addClass('error_span');
-                $('#span_mensaje_indicador').html('Ingrese Indicador');
+          }else if($('#politicaInstitucional').val()==""){
+                $('#politicaInstitucional').addClass('error');
+                $('#span_politicaInstitucional').addClass('error_span');
+                $('#span_mensaje_politicaInstitucional').html('Ingrese Politica Institucional');
                 var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
-                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Indicador',
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Politica Institucional',
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
@@ -61,20 +59,19 @@ $("#btn_IngresarIndicador").click(function(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
             }else{  
-registrar_Indicadores();
+registrar_politicaInstitucional();
   }
 });
 
 
 
-// funcion para registar indicadores
-function registrar_Indicadores(){
-
+// funcion para registar tipo de financiamiento
+function registrar_politicaInstitucional(){
     
     var token    = new $('#token').val();
-    var datos  = new FormData($("#frmIngresarIndicadores")[0]);
+    var datos  = new FormData($("#frmIngresarPoliticaInstitucional")[0]);
     $.ajax({
-    url:"/app/indicadores",
+    url:"/app/politicaInstitucional",
     headers :{'X-CSRF-TOKEN': token},
     type: 'POST',
     dataType: 'json',
@@ -84,20 +81,20 @@ function registrar_Indicadores(){
     success:function(res){
       if(res.registro==true){
          //swal("Efood!", "El usuario se ha registro correctamente!", "success");
-        swal("Indicador Registrado Correctamente..!!", "", "success");
-        document.getElementById("frmIngresarIndicadores").reset();  
-        $("#myModal_IngresarIndicador").modal("hide");
-        $("#datatable").load("/lista_indicadores");
+        swal("Politica Institucional Registrado Correctamente..!!", "", "success");
+        document.getElementById("frmIngresarPoliticaInstitucional").reset();  
+        $("#myModal_IngresarPoliticaInstitucional").modal("hide");
+        $("#datatable").load("/lista_politicaInstitucional");
        }
      }
   });
 }
 
 
-// Actualizar Indicadores
+// Actualizar Politicas Institucionales
 
-            $("#btn_ActualizarIndicador").click(function() {
-            if($('#indicador').val()==""&& $('#descripcion').val()==""){
+            $("#btn_ActualizarPoliticaInstitucional").click(function() {
+            if($('#politicaInstitucional_A').val()==""&& $('#descripcion_A').val()==""){
              var animate_in = 'lightSpeedIn',
                 animate_out = 'bounceOut';
                 new PNotify({title: 'Alerta Faltan datos',text: 'Por favor! algunos campos estan vacios',
@@ -105,16 +102,16 @@ function registrar_Indicadores(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
 
-                $('#indicador_A').addClass('error');
+                $('#politicaInstitucional_A').addClass('error');
                 $('#descripcion_A').addClass('error');
 
                 
-          }else if($('#indicador_A').val()==""){
-                $('#indicador_A').addClass('error');
-                $('#span_indicador_A').addClass('error_span');
-                $('#span_mensaje_indicador_A').html('Ingrese Indicador');
+          }else if($('#politicaInstitucional_A').val()==""){
+                $('#politicaInstitucional_A').addClass('error');
+                $('#span_politicaInstitucional_A').addClass('error_span');
+                $('#span_mensaje_politicaInstitucional_A').html('Ingrese Politica Institucional');
                 var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
-                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Indicador',
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Politica Institucional',
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
@@ -128,50 +125,50 @@ function registrar_Indicadores(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
             }else{
-            Actualizar_Indicador();
+            Actualizar_politicaInstitucional();
              }
           }); 
         
     function cargar_datos(id){
-    var route="/app/indicadores/" +id+"/edit";  
+    var route="/app/politicaInstitucional/" +id+"/edit";  
     $.get(route,function(res){
-      $("#IdIndicador").val(res.id)
-      $("#indicador_A").val(res.indicador);
+      $("#IdPoliticaInstitucional").val(res.id)
+      $("#politicaInstitucional_A").val(res.politicaInstitucional);
       $("#descripcion_A").val(res.descripcion);     
       });
     }
 
-  function Actualizar_Indicador(){
+  function Actualizar_politicaInstitucional(){
 
-  var id =$("#IdIndicador").val();
-  var indicador =$("#indicador_A").val();
+  var id =$("#IdPoliticaInstitucional").val();
+  var politicaInstitucional =$("#politicaInstitucional_A").val();
   var descripcion=$("#descripcion_A").val();
-  var route  ="/app/indicadores/"+id+"";
+  var route  ="/app/politicaInstitucional/"+id+"";
   var token  =$("#token").val();
   $.ajax({
     url: route,
     headers :{'X-CSRF-TOKEN': token},
     type: 'PUT',
     dataType:'json',
-        data    :{indicador:indicador,descripcion:descripcion},
+        data    :{politicaInstitucional:politicaInstitucional,descripcion:descripcion},
         success:function(res){
           if(res.sms=='ok'){
-            $('#myModal_ModificarIndicador').modal('hide');
-            swal("Indicador Actualizado Correctamente..!!", "", "success");
-           $("#datatable").load('/lista_indicadores');
+            $('#myModal_ModificarPoliticaInstitucional').modal('hide');
+            swal("Politica Institucional Actualizado Correctamente..!!", "", "success");
+           $("#datatable").load('/lista_politicaInstitucional');
             
           }else{
-            swal("Error al Actualizar Indicador..!!", "", "success");
+            swal("Error al Actualizar Politica Institucional..!!", "", "success");
                }
           
         }
   });
 }
 
-function EliminarIndicador(id){
+function EliminarpoliticaInstitucional(id){
 
     swal({ 
-    title: "¿Deseas Elimar Indicador?",
+    title: "¿Deseas Elimar Politica Institucional?",
     text: "",
     type: "warning",
     showCancelButton: true,
@@ -183,7 +180,7 @@ function EliminarIndicador(id){
 
     function(isConfirm){ 
     if (isConfirm){
-      var route  ="/app/indicadores/"+id+"";
+      var route  ="/app/politicaInstitucional/"+id+"";
         var token  =$("#token").val();
         $.ajax({
           url: route,
@@ -192,13 +189,13 @@ function EliminarIndicador(id){
           dataType:'json',
               success:function(res){
                if(res.sms=='ok'){
-            swal("¡Hecho!","Indicador  Eliminado Correctamente","success"); 
-                  $("#datatable").load("/lista_indicadores");
+            swal("¡Hecho!","Politica Institucional Eliminado Correctamente","success"); 
+                  $("#datatable").load("/lista_politicaInstitucional");
                 }          
               }
            });
         }else { 
-      swal("¡Error !","No se pudo Eliminar Indicador ","error"); 
+      swal("¡Error !","No se pudo Eliminar Politica Institucional ","error"); 
     } 
   });
    

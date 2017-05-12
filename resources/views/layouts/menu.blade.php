@@ -34,6 +34,7 @@
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoFinanciamiento')">Tipos Financiamientos</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoEstadoMeta')">Tipos Estados Metas</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/indicadores')">Indicadores</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/politicaInstitucional')">Politicas Institucionales</a></li>
                     </ul>
                   </li>
                 </ul>

@@ -27,7 +27,7 @@
 
 <!--  Modal para modificar Tipos de Estado en las Metas-->
 
-<div class="modal fade" id="myModal_ModificarIndicador" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal_ModificarPoliticaInstitucional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -43,12 +43,12 @@
 
            
              {!!Form::label('Indicador:')!!}
-              {!!Form::text('indicador',null,['id'=>'indicador', 'class'=>'form-control','placeholder'=>'Ingrese Indicador','required'=>''])!!}
+              {!!Form::text('indicador_A',null,['id'=>'indicador_A', 'class'=>'form-control','placeholder'=>'Ingrese Indicador','required'=>''])!!}
               <span id="span_indicador"></span>
               <span id="span_mensaje_indicador" style="display: block;color: red;"></span>
 
               {!!Form::label('Descripcion:')!!}
-              {!!Form::text('descripcion',null,['id'=>'descripcion', 'class'=>'form-control','placeholder'=>'Ingrese descripcion de Indicador','required'=>''])!!}
+              {!!Form::text('descripcion_A',null,['id'=>'descripcion_A', 'class'=>'form-control','placeholder'=>'Ingrese descripcion de Indicador','required'=>''])!!}
               <span id="span_descripcion"></span>
               <span id="span_mensaje_descripcion" style="display: block;color: red;"></span>
 
@@ -85,11 +85,11 @@
 
               {!!Form::label('Indicador:')!!}
               {!!Form::text('indicador',null,['id'=>'indicador', 'class'=>'form-control','placeholder'=>'Ingrese Indicador','required'=>''])!!}
-              <span id="span_indicador"></span>
+              <span id="span_indica"></span>
               <span id="span_mensaje_indicador" style="display: block;color: red;"></span>
 
               {!!Form::label('Descripcion:')!!}
-              {!!Form::text('descripcion',null,['id'=>'descripcion', 'class'=>'form-control','placeholder'=>'Ingrese descripcion de Indicador','required'=>''])!!}
+              {!!Form::text('descripcion',null,['id'=>'descripcion', 'class'=>'form-control','placeholder'=>'Ingrese descripcion','required'=>''])!!}
               <span id="span_descripcion"></span>
               <span id="span_mensaje_descripcion" style="display: block;color: red;"></span>
       </div>
