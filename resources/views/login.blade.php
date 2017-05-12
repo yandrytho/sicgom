@@ -14,12 +14,16 @@
     {!!Html::style('plugins/font-awesome/css/font-awesome.min.css')!!}
     <!-- NProgress -->
     {!!Html::style('plugins/nprogress/nprogress.css')!!}
-    <!-- Animate.css -->
-    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
+    <!-- Animate.css 
+    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">-->
     <!-- Custom Theme Style -->
     {!!Html::style('css/custom.min.css')!!}
     <!-- Estilos SICGOM -->
     {!!Html::style('css/sicgom.css')!!}
+    
+    {!!Html::style('pnotify/pnotify.custom.min.css')!!}
+    
+
 
 
   </head>
@@ -31,12 +35,16 @@
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
-    
-    
+    <div id="lod" style="display:none"> 
+          <img src="{{asset('img/load.gif')}}" alt="" style="position: absolute;margin-left: 640px;z-index: 1;margin-top: 53px;width: 80px;">
+        <h4 style="position: absolute;margin-left: 640px;z-index: 1;margin-top: 136px;">Cargando...
+                </h4>
+    </div>
+    {!!Form::open(['method'=>'POST','id'=>'login_from'])!!} 
      <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
       <div class="login_wrapper">
         
-        <div class="animate form login_form">
+        <div id="login_form">
           <section class="login_content">
               <h1>SICGOM - UTM</h1>
               <div class="margin_top_10px">
@@ -45,8 +53,10 @@
               <div class="margin_top_10px">
                 <input type="password" class="form-control" id="clave" name="clave" placeholder="Clave" required="" />
               </div>
+    {!!Form::close()!!}
+
               <div class="margin_top_10px">
-                <button class="btn btn btn-dark form-control" name="btn-login" id="btn-login" >Iniciar Sessión</button>
+                <button type="button" class="btn btn-dark" id="btn-login" >Iniciar Sessión</button>
                 <a class="reset_pass" >Olvido su clave?</a>
               </div>
 
@@ -67,46 +77,13 @@
               </div>
           </section>
         </div>
-        <div id="register" class="animate form registration_form">
-          <section class="login_content">
-            <form>
-              <h1>Create Account</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-              </div>
-            </form>
-          </section>
-        </div>
-      </div>
+     </div>
     </div>
   </body>
   <!-- jQuery -->
     {!!Html::script('plugins/jquery/dist/jquery.min.js')!!}
     {!!Html::script('js/login-sicgom.js')!!}
+    {!!Html::script('pnotify/pnotify.custom.min.js')!!}
+
     
 </html>
