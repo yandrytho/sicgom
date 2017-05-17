@@ -70,6 +70,11 @@ Route::resource('/app/responsableEstrategico','ResponsableEstrategicoController'
 Route::get('/lista_reponsableEstrategico','ResponsableEstrategicoController@lista');
 //fin responsable estrategicos
 
+//programas
+Route::resource('/app/programa','ProgramasController');
+Route::get('/lista_programa','ProgramasController@lista');
+//fin programas
+
 
 
 

@@ -10,6 +10,11 @@
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/usuario')">Gestion Usuarios</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Programas <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/programa')">Gestion Programas</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-desktop"></i> Evaluacion Planificacion <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">Gestionar Planificacion</a></li>
