@@ -1,4 +1,41 @@
 
+//validar que presupuesto se ingrese numero
+   $(document).ready(function (){
+          
+          $('#presupuesto').blur(function (){
+            this.value = (this.value + '').replace(/[^0-9]/g, '');
+            if(this.value==""){
+              swal("El valor "+ this.value +" no es un numero..!!", "", "error");
+            }
+           });
+
+        });
+
+    $(document).ready(function (){
+          
+          $('#presupuesto_A').blur(function (){
+            this.value = (this.value + '').replace(/[^0-9]/g, '');
+            if(this.value==""){
+              swal("El valor "+ this.value +" no es un numero..!!", "", "error");
+            }
+           });
+
+        });
+
+
+/*Validaci[on del campo Presupuesto*/
+        $('#presupuesto').blur(function(){
+            var presupuesto = $("#presupuesto").val();
+            if (presupuesto.indexOf('')== -1){
+              $('#presupuesto').addClass('error');
+              $('#presupuesto').html('Ingrese presupuesto en numero');
+            }else{
+            $('#presupuesto').removeClass('error');
+            $('#span_presupuesto').removeClass('error_span');
+            $('#span_mensaje_presupuesto').html('');
+            }
+            
+        }); // fin
 /*Validaci[on del campo programa*/
         $('#programa').blur(function(){
             var programa = $("#programa").val();
@@ -18,7 +55,7 @@
             var presupuesto = $("#presupuesto").val();
             if (presupuesto.indexOf('')== -1){
               $('#presupuesto').addClass('error');
-              $('#presupuesto').html('Ingrese presupuesto');
+              $('#presupuesto').html('Ingrese presupuesto en numero');
             }else{
             $('#presupuesto').removeClass('error');
             $('#span_presupuesto').removeClass('error_span');
@@ -97,7 +134,7 @@
 
 
         
-//click al boton Registrar responsable estrategico
+//click al boton Registrar programa
 $("#btn_IngresarPrograma").click(function(){
  if($('#programa').val()=="" && $('#presupuesto').val()=="" && $('#descripcion').val()==""){
              var animate_in = 'lightSpeedIn',
@@ -124,9 +161,9 @@ $("#btn_IngresarPrograma").click(function(){
             }else if($('#presupuesto').val()==""){
                 $('#presupuesto').addClass('error');
                 $('#span_presupuesto').addClass('error_span');
-                $('#span_mensaje_presupuesto').html('Ingrese Preupuesto');
+                $('#span_mensaje_presupuesto').html('Ingrese Presupuesto en numero');
                 var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
-                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Presupuesto',
+                new PNotify({title: 'Alerta',text: 'Por favor! ingrese Presupuesto en numero',
                              type: 'error',delay: 2500,
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
