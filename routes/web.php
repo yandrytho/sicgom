@@ -95,6 +95,11 @@ Route::resource('/app/tipoMeta','tipoMetaController');
 Route::get('/lista_tipoMeta','tipoMetaController@lista');
 //fin tipo metas
 
+//medios de verificacion
+Route::resource('/app/medioVerificacion','medioVerificacionController');
+Route::get('/lista_medioVerificacion','medioVerificacionController@lista');
+//fin medios de verificacion
+
 
 
 

@@ -45,6 +45,7 @@
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/actividadMeta')">Actividades Metas</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tiempoPlanificacion')">Tiempos de Planificaciones</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoMeta')">Tipos de Metas</a></li>
+                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/medioVerificacion')">Medio de Verificacion</a></li>
                       </ul>
                   </li>
                 </ul>
