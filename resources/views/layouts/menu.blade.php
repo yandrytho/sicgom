@@ -43,7 +43,9 @@
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/responsableEstrategico')">Responsables Estrategicos</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/categoriaEvidencia')">Categorias Evidencias</a></li>
                       <li><a href="javascript:void(0)" onclick="cargarContenido('/app/actividadMeta')">Actividades Metas</a></li>
-                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tiempoPlanificacion')">Tiempos de Planificaciones</a></li></ul>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tiempoPlanificacion')">Tiempos de Planificaciones</a></li>
+                      <li><a href="javascript:void(0)" onclick="cargarContenido('/app/tipoMeta')">Tipos de Metas</a></li>
+                      </ul>
                   </li>
                 </ul>
               </div>

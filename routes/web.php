@@ -90,6 +90,11 @@ Route::resource('/app/tiempoPlanificacion','tiemposPlanificacionesController');
 Route::get('/lista_tiempoPlanificacion','tiemposPlanificacionesController@lista');
 //fin tiempos de planificaciones
 
+//tipo metas
+Route::resource('/app/tipoMeta','tipoMetaController');
+Route::get('/lista_tipoMeta','tipoMetaController@lista');
+//fin tipo metas
+
 
 
 

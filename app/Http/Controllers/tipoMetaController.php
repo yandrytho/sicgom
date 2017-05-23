@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\tiposFinanciamientos;
+use App\tipoMetas;
 use DB;
 use Auth;
 
-class TipoFinanciamientosController extends Controller
+class tipoMetaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,14 @@ class TipoFinanciamientosController extends Controller
      */
     public function index()
     {
-      $TipoFinanciamientos = tiposFinanciamientos::All();
-      return view('tiposFinanciamientos.GestionTiposFinanciamientos',compact('TipoFinanciamientos'));
+      $tipoMetas = tipoMetas::All();
+      return view('tipoMetas.GestionTiposMetas',compact('tipoMetas'));
     }
 
     public function lista()
     {
-     $TipoFinanciamientos = tiposFinanciamientos::all();
-     return view('tiposFinanciamientos.TablaTiposFinanciamientos',compact("TipoFinanciamientos"));
+     $tipoMetas = tipoMetas::All();
+      return view('tipoMetas.TablaTipoMeta',compact('tipoMetas'));
     }
 
     /**
@@ -44,13 +44,12 @@ class TipoFinanciamientosController extends Controller
      */
     public function store(Request $request)
     {
-      tiposFinanciamientos::create([
+       tipoMetas::create([
 
-                                'tipoFinanciamiento'=>$request->input('tipoFinanciamiento')
+                            'tipoMeta'=>$request->input('tipoMeta'),
                      ]);
         return response()->json(["registro"=>true]);
     }
-    
 
     /**
      * Display the specified resource.
@@ -71,8 +70,8 @@ class TipoFinanciamientosController extends Controller
      */
     public function edit($id)
     {
-        $TipoFinanciamientos = tiposFinanciamientos::find($id);
-      return response()->json($TipoFinanciamientos->toArray());
+        $tipoMetas = tipoMetas::find($id);
+      return response()->json($tipoMetas->toArray());
     }
 
     /**
@@ -84,9 +83,9 @@ class TipoFinanciamientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tipoFinanciamiento = tiposFinanciamientos::find($id);
-        $tipoFinanciamiento->fill($request->all());
-        $tipoFinanciamiento->save();
+        $tipoMetas = tipoMetas::find($id);
+        $tipoMetas->fill($request->all());
+        $tipoMetas->save();
         return response()->json([
             "sms"=>"ok" 
             ]);
@@ -100,8 +99,8 @@ class TipoFinanciamientosController extends Controller
      */
     public function destroy($id)
     {
-        $tipoFinanciamiento = tiposFinanciamientos::find($id);
-        $tipoFinanciamiento = $tipoFinanciamiento->delete();
+       $tipoMetas = tipoMetas::find($id);
+        $tipoMetas = $tipoMetas->delete();
         return response()->json([
             "sms"=>"ok" 
             ]);
