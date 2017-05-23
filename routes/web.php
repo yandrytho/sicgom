@@ -75,6 +75,21 @@ Route::resource('/app/programa','ProgramasController');
 Route::get('/lista_programa','ProgramasController@lista');
 //fin programas
 
+//categoria Evidencias
+Route::resource('/app/categoriaEvidencia','CategoriasEvidenciasController');
+Route::get('/lista_categoriaEvidencia','CategoriasEvidenciasController@lista');
+//fin categoria Evidencia
+
+//actividades metas
+Route::resource('/app/actividadMeta','actividadesMetasController');
+Route::get('/lista_actividadMeta ','actividadesMetasController@lista');
+//fin actividades metas
+
+//tiempos de planificaciones
+Route::resource('/app/tiempoPlanificacion','tiemposPlanificacionesController');
+Route::get('/lista_tiempoPlanificacion','tiemposPlanificacionesController@lista');
+//fin tiempos de planificaciones
+
 
 
 
